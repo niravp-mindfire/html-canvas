@@ -54,6 +54,7 @@ Usage
 ├── index.css             # Styling for the canvas and toolbar
 ├── index.js              # JavaScript code for drawing functionality
 └── assets/               # Directory for tool icons (e.g., pencil, brush, eraser, etc.)
+```
 
 ## Dependencies
 No external libraries are required for the application to run.
@@ -63,3 +64,4 @@ This project is open-source and available under the MIT License.
 
 ```bash
 Feel free to customize it further if needed.
+```
