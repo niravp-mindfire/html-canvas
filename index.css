@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Arrange the toolbar and canvas side by side */
+}
+
+#toolbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#tools {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#settings {
+    margin-top: 20px;
+}
+
+#actions {
+    margin-top: 20px;
+}
+
+button, select, input {
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button img {
+    margin-right: 5px;
+}
+
+#canvas-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    cursor: crosshair;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.popup {
+    position: absolute;
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Arrange toolbar and canvas vertically */
+    }
+
+    #toolbar {
+        width: 100%;
+        flex-direction: row; /* Arrange tools horizontally */
+        justify-content: center;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+    }
+
+    #tools, #settings, #actions {
+        flex-direction: row;
+        gap: 10px;
+        margin: 0;
+    }
+
+    button {
+        flex: 1; /* Ensure buttons stretch to fit the width */
+        padding: 8px;
+        height: 30px;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    button {
+        font-size: 12px;
+        padding: 5px;
+        height: 30px;
+    }
+
+    button img {
+        width: 12px;
+        margin-right: 3px;
+    }
+
+    #canvas-container {
+        padding: 10px;
+    }
+
+    canvas {
+        max-width: 100%;
+        max-height: 300px; /* Limit canvas height on very small screens */
+    }
+}

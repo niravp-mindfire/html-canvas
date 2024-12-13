@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Canvas Application</title>
+    <link href="index.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="toolbar">
+        <div id="tools">
+            <button id="pencilTool"><img src="assets/pencil.svg" width="15" /> Pencil</button>
+            <button id="brushTool"><img src="assets/brush.png" width="15" /> Brush</button>
+            <button id="eraserTool"><img src="assets/eraser.png" width="15" /> Eraser</button>
+            <button id="lineTool"><img src="assets/line.png" width="20" /> Line</button>
+            <button id="rectangleTool"><img src="assets/rectangle.svg" width="20" /> Rectangle</button>
+            <button id="ellipseTool"><img src="assets/ellipse.svg" width="20" /> Ellipse</button>
+        </div>
+
+        <div id="settings">
+            <label for="brushSize">Brush Size:</label>
+            <select id="brushSize">
+                <option value="2">Small</option>
+                <option value="5" selected>Medium</option>
+                <option value="10">Large</option>
+            </select>
+            <br />
+            <label for="colorPicker">Color:</label>
+            <input type="color" id="colorPicker" value="#000000">
+        </div>
+
+        <div id="actions">
+            <button id="undoButton"><img src="assets/undo.png" width="20" /> Undo</button>
+            <button id="redoButton"><img src="assets/redo.png" width="20" /> Redo</button>
+            <button id="clearCanvas"><img src="assets/clear.png" width="20" /> Clear</button>
+            <button id="saveImage"><img src="assets/save.svg" width="20" /> Save</button>
+        </div>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="drawingCanvas" width="800" height="600"></canvas>
+        <div id="popup" class="popup"></div>
+    </div>
+    <div>
+        <label>Upload Image:</label><br />
+        <input type="file" id="imageLoader" accept="image/*" style="margin: 10px;">
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
