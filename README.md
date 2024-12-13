@@ -61,7 +61,3 @@ No external libraries are required for the application to run.
 
 ## License
 This project is open-source and available under the MIT License.
-
-```bash
-Feel free to customize it further if needed.
-```
