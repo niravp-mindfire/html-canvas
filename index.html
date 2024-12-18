@@ -8,43 +8,42 @@
 </head>
 <body>
     <div id="toolbar">
+        <label>Tools</label>
         <div id="tools">
-            <button id="pencilTool"><img src="assets/pencil.svg" width="15" /> Pencil</button>
-            <button id="brushTool"><img src="assets/brush.png" width="15" /> Brush</button>
-            <button id="eraserTool"><img src="assets/eraser.png" width="15" /> Eraser</button>
-            <button id="lineTool"><img src="assets/line.png" width="20" /> Line</button>
-            <button id="rectangleTool"><img src="assets/rectangle.svg" width="20" /> Rectangle</button>
-            <button id="ellipseTool"><img src="assets/ellipse.svg" width="20" /> Ellipse</button>
+            <button id="pencilTool" title="Pencil"><img src="assets/pencil.png" width="20" /></button>
+            <button id="brushTool" title="Brush"><img src="assets/brush.png" width="20" /></button>
+            <button id="eraserTool" title="Eraser"><img src="assets/eraser.png" width="20" /></button>
+            <button id="lineTool" title="Line"><img src="assets/line.png" width="20" /></button>
+            <button id="rectangleTool" title="Rectangle"><img src="assets/rectangle.png" width="20" /></button>
+            <button id="ellipseTool" title="Ellipse"><img src="assets/ellipse.png" width="20" /></button>
+            <button id="selectTool" title="Select"><img src="assets/select.png" width="20" /></button>
         </div>
 
         <div id="settings">
-            <label for="brushSize">Brush Size:</label>
-            <select id="brushSize">
-                <option value="2">Small</option>
-                <option value="5" selected>Medium</option>
-                <option value="10">Large</option>
-            </select>
+            <label for="brushSize">Size:</label>
+            <input type="range" id="brushSize" min="1" max="100" value="5" />
             <br />
             <label for="colorPicker">Color:</label>
             <input type="color" id="colorPicker" value="#000000">
+            <div>
+                <label>Upload Image:</label><br />
+                <input type="file" id="imageLoader" accept="image/*">
+            </div>
         </div>
-
-        <div id="actions">
-            <button id="undoButton"><img src="assets/undo.png" width="20" /> Undo</button>
-            <button id="redoButton"><img src="assets/redo.png" width="20" /> Redo</button>
-            <button id="clearCanvas"><img src="assets/clear.png" width="20" /> Clear</button>
-            <button id="saveImage"><img src="assets/save.svg" width="20" /> Save</button>
+        <label>Actions</label>
+        <div id="tools">
+            <button id="undoButton" title="Undo"><img src="assets/undo.png" width="20" /></button>
+            <button id="redoButton" title="Redo"><img src="assets/redo.png" width="20" /></button>
+            <button id="clearCanvas" title="Clear"><img src="assets/clear.png" width="20" /></button>
+            <button id="saveImage" title="Save"><img src="assets/save.png" width="20" /></button>
         </div>
     </div>
 
     <div id="canvas-container">
-        <canvas id="drawingCanvas" width="800" height="600"></canvas>
+        <canvas id="drawingCanvas" width="1000" height="600"></canvas>
         <div id="popup" class="popup"></div>
     </div>
-    <div>
-        <label>Upload Image:</label><br />
-        <input type="file" id="imageLoader" accept="image/*" style="margin: 10px;">
-    </div>
+    <div id="brushPreview"></div>
 
     <script src="./index.js"></script>
 </body>
