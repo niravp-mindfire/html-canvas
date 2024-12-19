@@ -176,7 +176,7 @@ canvas.addEventListener("mousemove", (e) => {
     img.src = undoStack[undoStack.length - 1];
     img.onload = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(img, 0, 0);
+      // ctx.drawImage(img, 0, 0);
       ctx.clearRect(
         selectedArea.x,
         selectedArea.y,
@@ -195,7 +195,7 @@ canvas.addEventListener("mousemove", (e) => {
         selectedArea.height
       );
       ctx.setLineDash([]);
-    };
+    }
   }
 
   updateCursor(x, y);
@@ -329,7 +329,7 @@ canvas.addEventListener("mousemove", (e) => {
   } else {
     brushPreview.style.display = "none";
   }
-  updateBrushPreview();
+  updateBrushPreview(e);
 });
 
 canvas.addEventListener("mouseleave", () => {
