@@ -4,47 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drawing Canvas Application</title>
-    <link href="index.css" rel="stylesheet" />
+    <link href="./src/css/index.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="toolbar">
-        <label>Tools</label>
-        <div id="tools">
-            <button id="pencilTool" title="Pencil"><img src="assets/pencil.png" width="20" /></button>
-            <button id="brushTool" title="Brush"><img src="assets/brush.png" width="20" /></button>
-            <button id="eraserTool" title="Eraser"><img src="assets/eraser.png" width="20" /></button>
-            <button id="lineTool" title="Line"><img src="assets/line.png" width="20" /></button>
-            <button id="rectangleTool" title="Rectangle"><img src="assets/rectangle.png" width="20" /></button>
-            <button id="ellipseTool" title="Ellipse"><img src="assets/ellipse.png" width="20" /></button>
-            <button id="selectTool" title="Select"><img src="assets/select.png" width="20" /></button>
-        </div>
+    <!-- Toolbar Section -->
+    <header id="toolbar">
+        <h1>Tools</h1>
+        <nav id="tools">
+            <button id="pencilTool" title="Pencil" aria-label="Pencil Tool">
+                <img src="assets/pencil.png" width="20" alt="Pencil Tool" />
+            </button>
+            <button id="brushTool" title="Brush" aria-label="Brush Tool">
+                <img src="assets/brush.png" width="20" alt="Brush Tool" />
+            </button>
+            <button id="eraserTool" title="Eraser" aria-label="Eraser Tool">
+                <img src="assets/eraser.png" width="20" alt="Eraser Tool" />
+            </button>
+            <button id="lineTool" title="Line" aria-label="Line Tool">
+                <img src="assets/line.png" width="20" alt="Line Tool" />
+            </button>
+            <button id="rectangleTool" title="Rectangle" aria-label="Rectangle Tool">
+                <img src="assets/rectangle.png" width="20" alt="Rectangle Tool" />
+            </button>
+            <button id="ellipseTool" title="Ellipse" aria-label="Ellipse Tool">
+                <img src="assets/ellipse.png" width="20" alt="Ellipse Tool" />
+            </button>
+            <button id="selectTool" title="Select" aria-label="Select Tool">
+                <img src="assets/select.png" width="20" alt="Select Tool" />
+            </button>
+        </nav>
 
-        <div id="settings">
+        <section id="settings">
+            <h2>Brush Settings</h2>
             <label for="brushSize">Size:</label>
             <input type="range" id="brushSize" min="1" max="100" value="5" />
             <br />
             <label for="colorPicker">Color:</label>
             <input type="color" id="colorPicker" value="#000000">
-            <div>
+            <section>
                 <label>Upload Image:</label><br />
                 <input type="file" id="imageLoader" accept="image/*">
-            </div>
-        </div>
-        <label>Actions</label>
-        <div id="tools">
-            <button id="undoButton" title="Undo"><img src="assets/undo.png" width="20" /></button>
-            <button id="redoButton" title="Redo"><img src="assets/redo.png" width="20" /></button>
-            <button id="clearCanvas" title="Clear"><img src="assets/clear.png" width="20" /></button>
-            <button id="saveImage" title="Save"><img src="assets/save.png" width="20" /></button>
-        </div>
-    </div>
+            </section>
+        </section>
 
-    <div id="canvas-container">
+        <h2>Actions</h2>
+        <nav id="tools">
+            <button id="undoButton" title="Undo" aria-label="Undo">
+                <img src="assets/undo.png" width="20" alt="Undo Action" />
+            </button>
+            <button id="redoButton" title="Redo" aria-label="Redo">
+                <img src="assets/redo.png" width="20" alt="Redo Action" />
+            </button>
+            <button id="clearCanvas" title="Clear" aria-label="Clear Canvas">
+                <img src="assets/clear.png" width="20" alt="Clear Canvas" />
+            </button>
+            <button id="saveImage" title="Save" aria-label="Save Image">
+                <img src="assets/save.png" width="20" alt="Save Image" />
+            </button>
+        </nav>
+    </header>
+
+    <!-- Canvas Section -->
+    <main id="canvas-container">
         <canvas id="drawingCanvas" width="1000" height="600"></canvas>
         <div id="popup" class="popup"></div>
-    </div>
-    <div id="brushPreview"></div>
+    </main>
 
-    <script src="./index.js"></script>
+    <!-- Brush Preview -->
+    <aside id="brushPreview"></aside>
+
+    <script type="module" src="./src/js/index.js"></script>
 </body>
 </html>
